@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Happy Rose Day Richa Bubu 🌹</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', sans-serif;
+            background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .card {
+            position: relative;
+            z-index: 2;
+            background: white;
+            margin: auto;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 35px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 420px;
+            text-align: center;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+        }
+
+        h1 {
+            color: #e60026;
+            margin-bottom: 10px;
+        }
+
+        .rose {
+            font-size: 80px;
+            margin: 15px 0;
+            display: none;
+            animation: float 2s infinite ease-in-out;
+        }
+
+        p {
+            color: #444;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .name {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #e60026;
+            font-size: 22px;
+        }
+
+        .footer {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #777;
+            display: none;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0); }
+        }
+
+        /* Falling roses */
+        .rose-fall {
+            position: absolute;
+            top: -10%;
+            font-size: 25px;
+            animation: fall linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(110vh) rotate(360deg);
+            }
+        }
+
+        .music-btn {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #e60026;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .music-btn:hover {
+            background: #c40020;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio id="bgMusic" loop>
+    <source src="Perfect - 320Kbps-(Mr-Jat.in).mp3" type="audio/mpeg">
+</audio>
+
+<div class="card">
+    <h1>Happy Rose Day 🌹</h1>
+
+    <div class="rose" id="mainRose">🌹</div>
+
+    <p>
+        My dearest <b>Richa Bubu</b>,
+    </p>
+
+    <p>
+        This rose is not just a flower,  
+        it’s a piece of my heart 🌹  
+        Every petal carries my love,  
+        every fragrance whispers your name.
+    </p>
+
+    <p>
+        You make my world softer, brighter,  
+        and endlessly beautiful.  
+        Today and always,  
+        you’ll be my favorite reason to smile ❤️
+    </p>
+
+    <div class="name">
+        🌹 I love you, Richa Bubu 🌹
+    </div>
+
+    <button class="music-btn" onclick="showLove()">
+        💖 press me 🎶
+    </button>
+
+    <div class="footer" id="ending">
+        Forever yours 💖<br>
+        <b>Ashu Dudu</b>
+    </div>
+</div>
+
+<script>
+function showLove() {
+    document.getElementById("bgMusic").play();
+    document.getElementById("mainRose").style.display = "block";
+
+    setTimeout(() => {
+        document.getElementById("ending").style.display = "block";
+    }, 3000);
+}
+
+// Create falling roses
+for (let i = 0; i < 20; i++) {
+    let rose = document.createElement("div");
+    rose.className = "rose-fall";
+    rose.innerHTML = "🌹";
+    rose.style.left = Math.random() * 100 + "vw";
+    rose.style.animationDuration = (3 + Math.random() * 5) + "s";
+    rose.style.fontSize = (20 + Math.random() * 20) + "px";
+    document.body.appendChild(rose);
+}
+</script>
+
+</body>
+</html>
+
